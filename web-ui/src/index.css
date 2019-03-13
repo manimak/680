@@ -1,0 +1,11 @@
+body { 
+    height:auto !important;
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+    position: auto;
+    /* top: 0;
+    left: 0; */
+  
+    background-color: rgba(200, 158, 255, 0.103);
+  }
