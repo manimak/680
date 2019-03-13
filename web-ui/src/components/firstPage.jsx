@@ -8,9 +8,25 @@ import AutocompleteField from './fieldWithAutocomplete';
 import DatePicker from 'react-date-picker';
 import TravelRadio from './travelCheckRadio';
 import CheckBoxFood from './foodCheckBox';
+import gql from 'graphql-tag';
+import {graphql , compose} from 'react-apollo';
 // import DatePicker from "react-datepicker";
 import 'bootstrap/dist/css/bootstrap.css';
 // import "react-datepicker/dist/react-datepicker.css";
+
+const UpdateMutation = gql`
+    mutation($from: String!,$to: String!,$depart: String!,$ureturn: String!,$how: String!,$foods: [String])
+    {
+        createTravelInfo(from: $from,to: $to,depart: $depart,ureturn: $ureturn,how: $how,foods: $foods){
+            from,
+            to,
+            depart,
+            ureturn,
+            how,
+            foods
+        }
+    }
+`;
 
 function simulateNetworkRequest() {
     return new Promise(resolve => setTimeout(resolve, 500));
@@ -58,7 +74,7 @@ class FirstPageForm extends Component {
     }
     
 
-    handleClick=()=> {
+    handleClick= ()=> {
 
         
             var radio = document.getElementsByName('travelRadio');
@@ -92,6 +108,18 @@ class FirstPageForm extends Component {
                 this.setState({saveEndDate : this.state.endDate})
                 this.setState({travelRadio: radio_value})
                 this.setState({foods : selectedFood})
+                
+                 this.props.createTravelInfo({
+                   variables:{
+                        from: document.getElementById("location1").value,
+                        to: document.getElementById("location2").value,
+                        depart: this.state.startDate.toLocaleString('us-GB', { timeZone: 'UTC' }),
+                        ureturn: this.state.endDate.toLocaleString('us-GB', { timeZone: 'UTC' }),
+                        how: radio_value,
+                        foods: selectedFood
+
+                    }
+                })
                 window.location.assign('/result')
             }
             else{
@@ -191,7 +219,7 @@ class FirstPageForm extends Component {
     }
 }
  
-export default FirstPageForm;
+export default graphql(UpdateMutation, {name: "createTravelInfo"}) (FirstPageForm);
 
 
 
