@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mshabazi68/Comp680.git"
+    "url": "git+https://github.com/manimak/680.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mshabazi68/Comp680/issues"
+    "url": "https://github.com/manimak/680/issues"
   },
-  "homepage": "https://github.com/mshabazi68/Comp680#readme",
+  "homepage": "https://github.com/manimak/680#readme",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
