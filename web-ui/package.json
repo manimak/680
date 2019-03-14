@@ -2,12 +2,13 @@
   "name": "web-ui",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://manimak.github.io/680",
+  "homepage": "http://manimak.github.io/680",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
     "apollo-boost": "^0.3.1",
     "bootstrap": "^4.1.1",
+    "gh-pages": "^2.0.1",
     "google-maps-react": "^2.0.2",
     "graphql": "^14.1.1",
     "react": "^16.8.3",
@@ -32,9 +33,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-
   "proxy": "http://localhost:4000",
-  
   "browserslist": [
     ">0.2%",
     "not dead",
