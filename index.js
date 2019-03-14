@@ -1,7 +1,7 @@
 const { GraphQLServer } = require('graphql-yoga')
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://heroku_x6x34536:edbvv8tfq7blh3g5brn78ge361@ds213896.mlab.com:13896/heroku_x6x34536");
+mongoose.connect("https://stormy-fortress-69906.herokuapp.com/");
 
 const User = mongoose.model('User',{
   firstName: String,
