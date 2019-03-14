@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "./index.css";
 
 const client = new ApolloClient({
-  uri: "mongodb://<dbuser>:<dbpassword>@ds213896.mlab.com:13896/heroku_x6x34536"
+  uri: "http://localhost:4000/"
 });
 
 ReactDOM.render(
