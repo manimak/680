@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "./index.css";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/"
+  uri: "/"
 });
 
 ReactDOM.render(
