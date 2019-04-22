@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "./index.css";
 
 const client = new ApolloClient({
-  uri: "/"
+  uri: "https://floating-spire-44861.herokuapp.com/"
 });
 
 ReactDOM.render(
